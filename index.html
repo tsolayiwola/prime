@@ -247,13 +247,16 @@
     /* ── WHY REAL ESTATE: side-by-side split ── */
     .why-re-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 360px 1fr;
       gap: 48px;
       align-items: start;
     }
 
     .why-re-left {
-      padding-top: 8px;
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
     /* PHOTO ZONE 2: Side image in Why Real Estate section.
@@ -263,23 +266,27 @@
        To swap: change the src attribute on the img tag below in the HTML.
     */
     .why-re-right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
 
     .why-re-img {
       width: 100%;
-      height: 260px;
+      height: 280px;
       object-fit: cover;
       object-position: center 30%;
       border-radius: 14px;
       display: block;
       box-shadow: 0 18px 40px rgba(15,59,46,0.18);
-      grid-column: 1 / -1;
     }
 
-    .card-grid-2 { display: contents; }
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
     .card      { background: var(--white); padding: 28px 26px; border-radius: 10px; min-height: 180px; display: flex; flex-direction: column; }
     .card-cream { background: var(--cream); padding: 28px 26px; border-radius: 10px; min-height: 180px; display: flex; flex-direction: column; }
     .card-title { font-weight: 700; font-size: 10px; color: var(--green); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
@@ -399,6 +406,7 @@
 
     .cta-close h2 { color: var(--white); font-weight: 800; font-size: 34px; line-height: 1.2; margin-bottom: 16px; }
     .cta-close p { color: rgba(255,255,255,0.5); font-size: 13px; max-width: 400px; margin: 0 auto 40px; line-height: 2; }
+    .cta-close .btn-gold { margin: 0 auto; display: inline-flex; }
     .cta-tagline { margin-top: 20px; color: rgba(255,255,255,0.28); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; }
 
     /* ── FOOTER ── */
@@ -456,8 +464,9 @@
       .section-cream, .section-white, .section-green { padding: 64px 24px; }
 
       .why-re-grid { grid-template-columns: 1fr; gap: 32px; }
-      .why-re-right { grid-template-columns: 1fr; }
-      .why-re-img { height: 240px; border-radius: 12px; grid-column: 1; }
+      .why-re-left { grid-column: auto; }
+      .why-re-right { gap: 20px; }
+      .why-re-img { height: 240px; border-radius: 12px; }
 
       .audience-grid { grid-template-columns: 1fr 1fr; }
       .audience-card-img { height: 170px; }
@@ -466,7 +475,7 @@
       .why-ip-grid { grid-template-columns: 1fr; gap: 32px; }
       .why-ip-img { height: 320px; border-radius: 12px; }
 
-      .process-split { gap: 8px; }
+      .process-split { gap: 4px; }
       .process-grid { grid-template-columns: 1fr; border: none; }
       .step { border-right: none; border-bottom: 1px solid rgba(15,59,46,0.1); }
       .step:last-child { border-bottom: none; }
@@ -495,6 +504,16 @@
         line-height: 1.3;
       }
       .section-h2 { font-size: 22px; }
+      .why-re-grid { grid-template-columns: 1fr; }
+      .why-re-left { grid-column: auto; }
+      .why-re-right { grid-column: auto; gap: 18px; }
+      .why-re-img { height: 200px; }
+      .card-grid-2 { grid-template-columns: 1fr; }
+      .cta-close { padding: 60px 20px; text-align: center; }
+      .cta-close h2 { font-size: 24px; margin-bottom: 12px; }
+      .cta-close p { font-size: 12px; margin-bottom: 32px; }
+      .cta-close .btn-gold { width: 100%; }
+      .cta-tagline { margin-top: 16px; }
     }
   </style>
 </head>
